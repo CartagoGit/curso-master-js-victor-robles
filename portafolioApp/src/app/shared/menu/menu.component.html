@@ -1,0 +1,10 @@
+<header>
+  <ul>
+    <span *ngFor="let item of menuItems; let i = index">
+      <li *ngIf="menuItems.length / i === 2">Hola</li>
+      <li [routerLink]="item.route" routerLinkActive="router-link-active">
+        {{ item.text }}
+      </li>
+    </span>
+  </ul>
+</header>
