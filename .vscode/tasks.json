@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "mongo",
+			"path": "Seccion - 45_58 - Angular/angular-empezando/",
+			"problemMatcher": [],
+			"label": "npm: mongo - Seccion - 45_58 - Angular/angular-empezando",
+			"detail": "md mongo-db & \"C:/Program Files/MongoDb/Server/4.2/bin/mongod.exe\" --dbpath \"V:/MongoDB/cursos/data\""
+		}
+	]
+}

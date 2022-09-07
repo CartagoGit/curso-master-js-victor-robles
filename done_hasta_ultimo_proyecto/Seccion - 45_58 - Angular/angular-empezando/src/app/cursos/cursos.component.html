@@ -1,0 +1,13 @@
+<h1>Componente de Cursos</h1>
+<h3>
+    Bienvenido
+    <span *ngIf="nombre && apellidos">
+        {{nombre}} {{apellidos}}
+    </span>!!!
+</h3>
+<span *ngIf="followers">
+    <h4>Tienes {{followers}} followers</h4>
+</span>
+<!-- EJEMPLO DE REDIRECCION -->
+<hr />
+<button (click)="redirigir()">Llevame a Zapatillas</button>

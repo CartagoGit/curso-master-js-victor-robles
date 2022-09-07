@@ -1,0 +1,137 @@
+ $bg-url            : "../img/hojas.jpg";
+ $text-color        : white;
+ $base-color        : #235E3D;
+ $base-bg           : white;
+ $base-h-text-color : #333;
+ $base-interline-url: "../img/lines.png";
+ $bg-global         : rgba(51, 51, 51, 0.70);
+ $logo-bg           : rgba(53, 94, 61, 0.9);
+ $logo-bg-hover     : rgba(42, 109, 71, 1);
+ $logo-box-shadow   : 0px 0px 3px rgba(30, 189, 30, 0.3) inset;
+ $logo-text-shadow  : 1px 1px 5px #333;
+ $post-date-text    : grey;
+ $post-btn-shadow   : 1px 1px 3px #333;
+ $aside-input-border:1px solid #ccc;
+ $aside-input-shadow: 0px 0px 2px grey;
+ $aside-submit-bg   : #ccc;
+
+
+ #all {
+     background           : url($bg-url);
+     background-attachment: fixed;
+
+ }
+
+ #global {
+     background: $bg-global;
+
+     #header {
+         #logo {
+             background-color: $logo-bg;
+             color           : $text-color;
+         }
+
+         #logo:hover {
+             background-color: $logo-bg-hover;
+             box-shadow      : $logo-box-shadow;
+             text-shadow     : $logo-text-shadow;
+         }
+
+         #menu {
+             ul {
+                 li {
+                     a {
+                         color: $text-color;
+                     }
+                 }
+
+                 li:hover {
+                     background-color: $base-color;
+                 }
+             }
+         }
+     }
+
+     #content-slider {
+         background-color: $base-bg;
+     }
+
+     #content {
+         background-color: $base-bg;
+         color           : $base-color;
+
+         .principal {
+             .post {
+                 h2 {
+                     color              : $base-h-text-color;
+                     background         : url($base-interline-url) repeat-x;
+                     background-position: 0% 60%;
+
+                     .bg-span {
+                         background: $base-bg;
+                     }
+                 }
+
+                 h3 {
+                     color              : $base-h-text-color;
+                     background         : url($base-interline-url) repeat-x;
+                     background-position: 0% 52%;
+                     border             : none;
+                     font-weight        : bold;
+
+                     .bg-span {
+                         background: $base-bg;
+                     }
+                 }
+
+                 .date {
+                     color: $post-date-text;
+                 }
+
+                 .btn-more {
+                     background: $base-color;
+                     color     : $text-color;
+                     box-shadow: $post-btn-shadow;
+                 }
+
+                 .btn-more:hover {
+                     background: $text-color;
+                     color     : $base-color;
+                     box-shadow: $post-btn-shadow inset;
+                 }
+
+             }
+         }
+
+         #sidebar {
+             h4 {
+                 color     : $base-h-text-color;
+                 background: url($base-interline-url) repeat-x;
+
+                 span {
+                     background: $base-bg;
+                 }
+             }
+
+
+
+
+         }
+
+         input,
+         .btn-default {
+             border    : $aside-input-border;
+             box-shadow: $aside-input-shadow;
+         }
+
+         input[type="submit"],
+         .btn-default {
+             background-color: $aside-submit-bg;
+             color           : $base-h-text-color;
+         }
+     }
+
+     #footer {
+         color: $text-color;
+     }
+ }

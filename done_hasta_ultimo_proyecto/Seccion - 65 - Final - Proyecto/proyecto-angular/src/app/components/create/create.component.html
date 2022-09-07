@@ -1,0 +1,102 @@
+<div id="title">
+    <h1><span>{{title}}</span></h1>
+    <h2><span>{{subtitle}}</span></h2>
+    <p><span>{{subtitle2}}</span></p>
+</div>
+<section class="articles">
+    <h2>{{title}}</h2>
+    <h3>Enviaré un presupuesto aproximado en base a su esquema y a los lenguajes de programación requeridos
+        para su creación </h3>
+    <div class="message">
+        <div class="success" *ngIf="project_saved == 'success'">
+            <p>El proyecto <strong>{{name_saved}}</strong> se ha enviado correctamente, puedes ver los datos <a href="#">aquí</a></p>
+        </div>
+        <div class="failed" *ngIf="project_saved == 'failed'">
+            <p>El proyecto no se ha enviado. Verifique los campos</p>
+        </div>
+    </div>
+    <article>
+
+        <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+            <div id="create-project">
+                <div id="content-static">
+                    <div id="content-form">
+                        <p>
+                            <label for="email" required>Email</label>
+                            <input type="email" name="email" #email="ngModel" placeholder="Obligatorio"
+                                [(ngModel)]="project.email" required
+                                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
+                        </p>
+                        <p class="errors" *ngIf="email.touched && !email.valid">
+                            <span>
+                                El email tiene que ser válido
+                            </span>
+                        </p>
+
+                        <p>
+                            <label for="name" required>Nombre</label>
+                            <input type="text" name="name" #name="ngModel" placeholder="Obligatorio"
+                                [(ngModel)]="project.name" required />
+                        </p>
+                        <p class="errors" *ngIf="name.touched && !name.valid">
+                            <span>
+                                El nombre tiene que ser válido
+                            </span>
+                        </p>
+                        <p>
+                            <label for="category">Categoria</label>
+                            <input type="text" name="category" #category="ngModel" placeholder="Opcional"
+                                [(ngModel)]="project.category" />
+                        </p>
+                        <p>
+                            <label for="langs">Lenguajes</label>
+                            <input type="text" name="langs" #langs="ngModel" placeholder="Opcional"
+                                [(ngModel)]="project.langs" />
+                        </p>
+                        <p id="p-file-input">
+                            <label>Esquema</label>
+                            <input id="file-input" type="file" accept=".png, .jpg, .jpeg, .gif, .bmp"
+                                name="file-input" (change)="fileChangeEvent($event)"/>
+                            <label id="file-button" for="file-input">Subir imagen del proyecto</label>
+
+                        </p>
+                        <p id="p-file-name">
+                            <span id="file-name">
+                                {{file_name}}
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="image-preview">
+                    <p>
+                        <label>Vista previa</label>
+                    </p>
+                    <div class="img-square-fix">
+                        <img id="img-preview" [src]="img_preview" title="Previsualizar imagen" />
+                    </div>
+                </div>
+                <div id="description">
+                    <p>
+                        <label for="description">Descripción</label>
+                        <textarea name="description"
+                            placeholder="Obligatorio - Descripción del proyecto y los detalles que se deseen..."
+                            #description="ngModel" [(ngModel)]="project.description" required></textarea>
+                    </p>
+                    <p class="errors" *ngIf="description.touched && !description.valid">
+                        <span>
+                            Es necesaria una descripción del producto
+                        </span>
+                    </p>
+                </div>
+                <div class="errors">
+
+
+                    <!-- <p *ngIf="description.touched && !description.valid"> -->
+
+                </div>
+                <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid || !thereIsFile" />
+            </div>
+        </form>
+    </article>
+</section>

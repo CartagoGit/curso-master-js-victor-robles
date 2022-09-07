@@ -1,0 +1,15 @@
+#cssclock {display: flex; flex-flow: column wrap; align-items: stretch; }
+#clockanalog { border: 2px dashed white; background: #012345 url("../img/analog.gif") no-repeat 0 0;  margin: 20px auto 20px auto; overflow: hidden; position: relative; width: 250px;  height: 250px; border-radius: 999px;}
+#clockanalog img { border: 0; left: 0px; position: absolute; top: 0px; } 
+.scale{
+    
+    display:flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    flex-basis: 1;
+}
+#clockdigital { border: 5px dashed white; background: #012345 url("../img/digital.gif") no-repeat 162px 99px; height: 250px; margin: 20px auto 20px auto; overflow: hidden; padding: 0; position: relative; flex-grow: 1; transform: scale(calc(width*100%/ 485px));}
+#clockdigital div {  background: #012345; height: 88px; position: absolute; width: 100%; } 
+#clockdigital div:last-child { bottom: 0; } 
+// #clockdigital img {display: block;}
+#clockdigital img { border: 0; display: block; height: 2000px; left: -1553px; margin: 0; padding: 0; position: absolute; top: -867px; width: 2000px; }

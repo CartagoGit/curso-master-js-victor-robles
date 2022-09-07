@@ -1,0 +1,102 @@
+<h2>{{titulo}}</h2>
+
+
+<p>Añadir marca</p>
+<input type="text" [(ngModel)]="mi_marca" (blur)="onBlur()" (keyup.enter)="mostrarPalabra()" />
+<button (click)="getMarca()">Mostrar Marca</button>
+<button (click)="addMarca()">Añadir Marca</button>
+<p>{{mi_marca}}</p>
+
+<h4>Compra Zapatillas de las mejores marcas</h4>
+<ul>
+    <li *ngFor="let marca of marcas; let indice = index">
+        {{indice}} - {{marca}}
+        <button (click)="removeMarca(indice)">Eliminar Marca</button>
+    </li>
+</ul>
+
+
+
+
+<h4>Las zapatillas disponibles son</h4>
+<ul>
+
+    <!-- Valdria para exponer solo los que esten en stock, pero voy a poner tambien el ejemplo del profesor porque puede ser util para otras ideas
+        <div *ngFor="let zapa of zapatillas">
+        <li *ngIf="zapa.stock">
+            {{zapa.marca}} - {{zapa.nombre}} - <strong>{{zapa.precio}} €</strong>
+
+            <span *ngIf="zapa.precio<=80" [style.backgroundColor]="zapa.precio < 60 ? 'lightgreen' : 'lightblue'">
+                ¡EN OFERTA!
+            </span>
+
+        </li>
+    </div> -->
+
+    <li *ngFor="let zapa of zapatillas">
+        <span [ngStyle]="{
+                'text-decoration': !zapa.stock ? 'line-through' : 'none'
+            }">
+            {{zapa.marca}} - {{zapa.nombre}} - {{zapa.color}}
+            <strong [class.alto-precio]="zapa.precio>80" [ngClass]="{
+                'fondo-rojo': zapa.precio > 100,
+                'subrayado' : zapa.marca == 'Nike'            }">
+                {{zapa.precio}} €
+            </strong>
+
+
+
+            <span *ngIf="zapa.precio<=80 && zapa.stock"
+                [style.backgroundColor]="zapa.precio < 60 ? 'lightgreen' : 'lightblue'">
+                ¡EN OFERTA!
+            </span>
+            <span *ngIf="!zapa.stock"> Sin Stock </span>
+        </span>
+
+    </li>
+
+</ul>
+
+<p>
+    El numero máximo de zapatillas con el mismo color es: {{totalNumPredominante}}<br />
+    Y los colores con tantas zapatillas maximas son: {{colorPredominante}}
+</p>
+<input type="text" [(ngModel)]="color" />
+<ul [ngSwitch]="color">
+    <li *ngSwitchCase="'Amarillo'">
+        El color predominante es el <span [ngStyle]="{
+            background: 'yellow'
+        }">
+            Amarillo
+        </span>
+    </li>
+    <li *ngSwitchCase="'Rojo'">
+        El color predominante es el <span [ngStyle]="{
+            background: 'red'
+        }">
+            Rojo
+        </span>
+    </li>
+    <li *ngSwitchCase="'Azul'">
+        El color predominante es el <span [ngStyle]="{
+            background: 'blue'
+        }">
+            Azul
+        </span>
+    </li>
+    <li *ngSwitchCase="'Blanco'">
+        El color predominante es el <span [ngStyle]="{
+            background: 'white'
+        }">
+            Blanco
+        </span>
+    </li>
+    <li *ngSwitchCase="'Negro'">
+        El color predominante es el <span [ngStyle]="{
+            background: 'black'
+        }">
+            Negro
+        </span>
+    </li>
+
+</ul>

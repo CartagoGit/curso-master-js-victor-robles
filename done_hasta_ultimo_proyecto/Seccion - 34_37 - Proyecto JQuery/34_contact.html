@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Master JS</title>
+    <!-- <link rel="icon" type="image/x-icon" href="icon.ico"> -->
+    <!-- ARCHIVOS CSS -->
+    <link rel="stylesheet" type="text/css" href="./plugins/jquery-ui-1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="./plugins/jquery-ui-1.12.1/jquery-ui.structure.min.css" />
+    <link rel="stylesheet" type="text/css" href="./plugins/jquery-ui-1.12.1/jquery-ui.theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <link id="theme" rel="stylesheet" type="text/css" href="./css/green.css" />
+    <!-- SCRIPTS JAVA SCRIPT -->
+    <script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="./plugins/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./plugins/form-validator/jquery.form-validator.min.js"></script>
+    <script type="text/javascript" src="./js/34_Proyecto JQuery.js"></script>
+    <script type="text/javascript" src="./js/34_contact.js"></script>
+</head>
+
+<body>
+    <div id="bg-all">
+        <div id="all">
+            <div id="selector-theme">
+                <div id="to-green"></div>
+                <div id="to-red"></div>
+                <div id="to-blue"></div>
+            </div>
+            <section id="global">
+                <!-- HEADER -->
+                <header id="header">
+                    <div id="logo">
+                        <h1>Proyecto JS</h1>
+                    </div>
+                    <div class="clearfix"></div>
+                    <nav id="menu">
+                        <ul>
+                            <li><a href="./34_Proyecto JQuery.html">Inicio</a></li>
+                            <li><a href="#">Calculadora</a></li>
+                            <li><a href="34_reloj.html">Reloj</a></li>
+                            <li><a href="./34_about.html">Sobre mí</a></li>
+                            <li><a href="./34_contact.html">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <!-- FIN HEADER -->+
+
+                <!-- CONTENIDO -->
+                <section id="content">
+                    <div id="box" class="principal">
+                        <!-- FORMULARIO DE CONTACTO -->
+                        <div class="post">
+                            <h2><span class="bg-span">Contacto</span></h2>
+                            <form id="form_contact">
+                                <label for="cnt_name">Nombre</label>
+                                <input type="text" name="cnt_name" data-validation="length alphanumeric"
+                                    data-validation-length="min3" />
+                                <label for="cnt_surname">Apellidos</label>
+                                <input type="text" name="cnt_surname" data-validation="length alphanumeric"
+                                    data-validation-length="min3" />
+                                <label for="cnt_email">Email</label>
+                                <input type="email" name="cnt_email" data-validation="email" />
+                                <label for="cnt_sex">Sexo</label>
+                                <select  name="cnt_sex" data-validation="required">
+                                    <option value="cnt_men" selected>Hombre</option>
+                                    <option value="cnt_women">Mujer</option>
+                                </select>
+                                <label for="cnt_born">Fecha de nacimiento</label>
+                                <input type="text" name="cnt_born" data-validation="date"
+                                    data-validation-format="dd-mm-yyyy" />
+                                <label for="cnt_age">Edad</label>
+                                <input type="number" name="cnt_age" data-validation="number"/>
+
+                                <input type="submit" value="Enviar" />
+                            </form>
+                        </div>
+
+                    </div>
+                    <aside id="sidebar">
+                        <div id="about">
+                            <h4><span>¿Quién soy?</span></h4>
+                            <img src="./img/caracol.jpg" />
+                            <p>Cargando...</p>
+                        </div>
+
+                        <div id="login">
+                            <h4><span>Identificate</span></h4>
+                            <form>
+                                <label for="name">Nombre</label>
+                                <input id="input_name" type="text" name="name" />
+                                <label for="email">Email</label>
+                                <input id="input_email" type="email" name="email" />
+                                <label for="pass">Password</label>
+                                <input id="input_pass" type="password" name="pass" />
+                                <input id="input_btn" type="submit" value="Login" />
+                            </form>
+                        </div>
+                    </aside>
+                </section>
+                <!-- FIN CONTENIDO -->
+
+                <footer id="footer">
+                    <h4>Master en JS - JQuery - Mario Cabrero Volarich &copy;</h4>
+                    <a href="#" id="upper">
+                        Subir al inicio
+                    </a>
+                </footer>
+
+
+            </section>
+        </div>
+    </div>
+
+</body>
+
+</html>

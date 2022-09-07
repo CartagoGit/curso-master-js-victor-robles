@@ -1,0 +1,20 @@
+<div id="content-all" [@animRoutes]="animationState">
+  <div id="aux-bg">
+    <div id="c-aux"></div>
+  </div>
+  <header id="header">
+    <app-top-nav id="c-top-nav"></app-top-nav>
+  </header>
+
+  <section id="principal">
+    <div id=content-principal>
+      <router-outlet (activate)="onActivate($event)"></router-outlet>
+    </div>
+
+  </section>
+  <footer id="footer">
+    <div id=content-footer>
+      <app-footer id="c-footer" class="content-bg"></app-footer>
+    </div>
+  </footer>
+</div>

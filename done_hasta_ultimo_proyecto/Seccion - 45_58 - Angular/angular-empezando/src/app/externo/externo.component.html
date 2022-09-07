@@ -1,0 +1,52 @@
+<h2>Crear usuario</h2>
+<form #newUser="ngForm" (ngSubmit)="onSubmit(newUser)">
+    <p>
+        <label for="name">Nombre: </label>
+        <input type="text" name="name" #name="ngModel" [(ngModel)]="new_user.name" required>
+        <span *ngIf="name.touched && !name.valid">
+            El nombre es obligatorio
+        </span>
+    </p>
+
+    <p>
+        <label for="job">Trabajo: </label>
+        <input type="text" name="job" #job="ngModel" [(ngModel)]="new_user.job" required>
+        <span *ngIf="job.touched && !job.valid">
+            El trabajo es obligatorio
+        </span>
+    </p>
+
+    <input type="submit" value="Guardar usuario" [disabled]="!newUser.form.valid">
+
+</form>
+
+<div *ngIf="usuario_guardado">
+    <h2>El usuario se ha guardado correctamente</h2>
+    <h3>ID: {{usuario_guardado.id}} - Usuario Guardado: {{usuario_guardado.name}} - Con el trabajo: {{usuario_guardado.job}}</h3>
+
+</div>
+<hr />
+{{fecha | date:'dd/MMMM/yy'}}<br />
+{{fecha | date:'dd/MM/yyyy' }}<br />
+{{fecha | date:'fullDate'| uppercase}}<br />
+
+<!-- Prueba con pipe personalizada -->
+{{88 |calculadora: 2}}<br />
+<h2>Sacando datos externos con Ajax y un servicio</h2>
+<h3>Introduce el número del usuario del que desea sacar la información: </h3>
+<input type="text" [(ngModel)]="userId" (keyup)="cargarUsuario()" />
+
+
+<div *ngIf="user" id="div-user">
+    <h3>Usuario numero {{user.id}} sacado con el getUser()</h3>
+    <img src={{user.avatar}} width="200px" />
+    <h4>{{user.first_name+ ' '+ user.last_name}}</h4>
+</div>
+<ul>
+    <li *ngFor="let user of users; index as i">
+        {{i+' - '+user.first_name}}<br />
+        <img src={{user.avatar}} width="200px" />
+    </li>
+</ul>
+<hr />
+<h2>Crear Usuario</h2>

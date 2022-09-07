@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Master JS</title>
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    <!-- <link rel="stylesheet" type="text/css" href="./css/styles.css" /> -->
+    <style>
+        .box {
+            width: 250px;
+            float:left;
+            margin: 20px;
+            height:250px;
+        }
+
+        .dashed {
+            float: right;
+            border: 3px dashed black;
+            padding: 5px;
+        }
+    </style>
+    <!--SCRIPTS JAVA SCRIPT -->
+    <script type="text/javascript" src="./js/18.js"></script>
+</head>
+
+<body>
+    <p>
+        <!-- ondblclick Capturar el doble click -->
+        <button id="boton00" onclick="alert('HEYYY me has pulsado')">Boton 1</button>
+        <br>
+        <button id="boton01" onclick="cambiarColor()">Boton 2</button>
+        <button id="boton02">Boton 2</button>
+    </p>
+    <div class="caja"></div>
+
+    <form><input id="campo_nombre" name="nombre" type="text" /></form>
+
+    <hr />
+
+    <p>
+    <form action="#" method="POST" id="formulario" class="box" onsubmit="return false">
+        <label for="nombre">Nombre: </label><br />
+        <input type="text" name="nombre" id="nombre" /><br />
+        <span id="error_nombre">El formato del nombre no es correcto</span>
+
+        <label for="apellidos">Apellidos: </label><br />
+        <input type="text" name="apellidos" id="apellidos" /><br />
+        <span id="error_apellidos">El formato de los apellidos no es correcto</span>
+
+        <label for="edad">Edad: </label><br />
+        <input type="number" name="edad" id="edad" /><br />
+        <span id="error_edad">El formato de la edad no es correcto</span>
+
+        <input type="submit" value="Enviar" id="submit" />
+    </form>
+    </p>
+    <div class="box dashed">
+        <h3>
+            Información de usuario
+        </h3>
+        <hr/>
+        <p id="p_nombre">
+            Nombre: <span></span>
+        </p>
+        <p id="p_apellidos">
+            Apellidos: <span></span>
+        </p>
+        <p id="p_edad">
+            Edad: <span></span>
+        </p>
+    </div>
+
+</body>
+
+</html>

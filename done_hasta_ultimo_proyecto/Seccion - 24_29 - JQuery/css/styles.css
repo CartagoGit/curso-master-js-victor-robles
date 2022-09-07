@@ -1,0 +1,73 @@
+/* 24 */
+.zebra{
+    border: dashed 5px black;
+}
+.grande{
+    font-size: 30px;
+}
+.margin-superior{
+    display:block;
+    margin-top:15px;   
+}
+.resaltado{
+    border-bottom: 2px solid brown;
+}
+
+/* 27 */
+.cajas {
+    
+    width: 250px;
+    height: 250px;
+    border: 2px solid black;
+    background: yellow;
+    transition: 300ms all; 
+    text-align: center;
+    padding: 20px;
+    overflow: scroll;
+    /* line-height: 250px; */
+    
+}
+/* #caja:hover{
+    
+    background: blue;
+    cursor: pointer;
+} */
+
+.input-events{
+    padding: 20px;
+    width: 600px;
+    font-size: 20px;
+    transition: 300ms all;
+}
+
+#datos{
+    border: 4px dashed black;
+    padding: 10px;
+    width:250px;
+    height: 100px;
+    margin-top: 10px;
+    display:none;
+}
+#sigueme{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    display: block;
+    background: yellow;
+    opacity: 0.5;
+    border-radius: 999px;
+    border: 3px solid black;
+}
+
+/* 28_02 */
+
+#caja01{
+    opacity: 0.1;
+    transition: opacity 4000ms linear; 
+}
+#caja01.faded{
+    opacity: 1;
+}
+
+/* 29 AJAX */
+

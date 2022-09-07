@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Master JS</title>
+    <!-- <link rel="icon" type="image/x-icon" href="icon.ico"> -->
+    <!-- ARCHIVOS CSS -->
+    <link rel="stylesheet" type="text/css" href="./plugins/jquery-ui-1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="./plugins/jquery-ui-1.12.1/jquery-ui.structure.min.css" />
+    <link rel="stylesheet" type="text/css" href="./plugins/jquery-ui-1.12.1/jquery-ui.theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="./plugins/bxslider-4-4.2.12/jquery.bxslider.min.css" />
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <link id="theme" rel="stylesheet" type="text/css" href="./css/green.css" />
+    <!-- SCRIPTS JAVA SCRIPT -->
+    <script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="./plugins/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./plugins/bxslider-4-4.2.12/jquery.bxslider.min.js"></script>
+    <script type="text/javascript" src="./plugins/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="./plugins/moment-with-locales.spanish.js"></script>
+    <script type="text/javascript" src="./js/34_Proyecto JQuery.js"></script>
+    <script type="text/javascript" src="./js/34_inicio.js"></script>
+</head>
+
+<body>
+    <div id="bg-all">
+        <div id="all">
+            <div id="selector-theme">
+                <div id="to-green"></div>
+                <div id="to-red"></div>
+                <div id="to-blue"></div>
+            </div>
+            <section id="global">
+                <!-- HEADER -->
+                <header id="header">
+                    <div id="logo">
+                        <h1>Proyecto JS</h1>
+                    </div>
+                    <div class="clearfix"></div>
+                    <nav id="menu">
+                        <ul>
+                            <li><a href="./34_Proyecto JQuery.html">Inicio</a></li>
+                            <li><a href="#">Calculadora</a></li>
+                            <li><a href="34_reloj.html">Reloj</a></li>
+                            <li><a href="./34_about.html">Sobre mí</a></li>
+                            <li><a href="./34_contact.html">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <!-- FIN HEADER -->
+
+                <!-- SLIDER -->
+                <div id="content-slider">
+                    <div class="slider" id="slider">
+                        <div><img src="./img/hojas.jpg" title="Hojas" /></div>
+                        <div><img src="./img/rojo.jpg" title="Rojo" /></div>
+                        <div><img src="./img/cielo.jpg" title="Cielo" /></div>
+                    </div>
+                </div>
+                <!-- FIN SLIDER -->
+
+                <!-- CONTENIDO -->
+                <section id="content">
+                    <div id="posts" class="principal">
+                        <!-- CARGANDO LOS POSTS CON JSON  -->
+                    </div>
+                    <aside id="sidebar">
+                        <div id="about">
+                            <h4><span class="bg-span">¿Quién soy?</span></h4>
+                            <img src="./img/caracol.jpg" />
+                            <p>Cargando...</p>
+                        </div>
+
+                        <div id="login">
+                            <h4><span>Identificate</span></h4>
+                            <form>
+                                <label for="name">Nombre</label>
+                                <input id="input_name" type="text" name="name" />
+                                <label for="email">Email</label>
+                                <input id="input_email" type="email" name="email" />
+                                <label for="pass">Password</label>
+                                <input id="input_pass" type="password" name="pass" />
+                                <input id="input_btn" type="submit" value="Login" />
+                            </form>
+                        </div>
+                    </aside>
+                </section>
+                <!-- FIN CONTENIDO -->
+
+                <footer id="footer">
+                    <h4>Master en JS - JQuery - Mario Cabrero Volarich &copy;</h4>
+                    <a href="#" id="upper">
+                        Subir al inicio
+                    </a>
+                </footer>
+
+
+            </section>
+        </div>
+    </div>
+
+</body>
+
+</html>

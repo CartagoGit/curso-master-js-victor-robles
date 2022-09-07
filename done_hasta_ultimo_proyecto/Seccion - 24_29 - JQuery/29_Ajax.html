@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Master JS</title>
+    <link rel="icon" type="image/x-icon" href="icon.ico">
+    <!-- ARCHIVOS CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <!-- SCRIPTS JAVA SCRIPT -->
+    <script type="text/javascript" src="./js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="./js/29_Ajax.js"></script>
+</head>
+
+<body>
+    <h1>Aprendiendo Ajax con jquery</h1>
+    <div class="cajas" id="datos_ajax"></div>
+    <div class="cajas" id="datos_ajax02"><h3>Elementos sacados de la API REST</h3></div>
+
+    <form action="https://reqres.in/api/users" method="POST" id="form_post">
+        Nombre: <input type="text" name="name" /><br>
+        Web: <input type="text" name="web" /><br>
+        <input type="submit" value="registrar" />
+    </form>
+</body>
+
+</html>

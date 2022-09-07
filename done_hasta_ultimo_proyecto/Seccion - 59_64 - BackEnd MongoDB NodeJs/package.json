@@ -1,0 +1,23 @@
+{
+  "name": "api-rest",
+  "version": "1.0.0",
+  "description": "Api-Rest del master de javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mongo": "Invoke-Expression & \"C:/Program Files/MongoDb/Server/4.2/bin/mongod.exe\" --dbpath \"V:/MongoDB/cursos/data\"",
+    "start": "nodemon index.js"
+  },
+  "author": "Mario Cabrero Volarich",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "globby": "^11.0.1",
+    "mongoose": "^5.9.18",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
