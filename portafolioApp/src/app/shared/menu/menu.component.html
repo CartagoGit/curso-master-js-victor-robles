@@ -1,8 +1,14 @@
 <ul>
   <span *ngFor="let item of menuItems; let i = index">
-    <li [routerLink]="item.route" routerLinkActive="router-link-active" role="button">
-      {{ item.text }}
+    <li
+      [routerLink]="item.route"
+      routerLinkActive="router-link-active"
+      role="button"
+    >
+      <a href="">{{ item.text }}</a>
     </li>
-    <li *ngIf="isMidMenu(i + 1)" role="button"><-----Hola-------></li>
+    <!-- <li *ngIf="isMidMenu(i + 1)" role="button">
+      <a href="">Logo</a>
+    </li> -->
   </span>
 </ul>
