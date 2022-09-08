@@ -17,6 +17,10 @@ export class MenuComponent implements OnInit {
       route: '/proyectos',
     },
     {
+      text: 'MCV',
+      route: '/logo',
+    },
+    {
       text: 'Crear Proyecto',
       route: '/crear-proyecto',
     },
@@ -29,10 +33,4 @@ export class MenuComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  isMidMenu(index: number): boolean {
-    const middle = Math.floor(this.menuItems.length / 2);
-
-    return middle === index;
-  }
 }

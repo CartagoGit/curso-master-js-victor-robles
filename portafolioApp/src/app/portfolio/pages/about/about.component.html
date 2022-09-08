@@ -1,1 +1,92 @@
-<p>Olga es la mas mejon</p>
+<!-- ENTRADA -->
+<div id="title">
+  <h1>{{ title }}</h1>
+  <h2 class="border-bottom mb-3 pb-2">{{ subtitle }}</h2>
+  <div class="row">
+    <!-- FOTO -->
+    <div class="col-6">
+      <img
+        src="../../../../assets/img/photo_profile.jpg"
+        alt="Foto de Mario"
+        class="photo"
+      />
+    </div>
+
+    <!-- DATOS -->
+    <div class="col-6 d-flex align-items-start flex-column">
+      <p class="pointer mt-auto">
+        <a [href]="email.address" class="text-decoration-none link-dark">
+          <span [innerHTML]="email.icon"></span> {{ email.address }}</a
+        >
+      </p>
+      <p class="pointer mb-auto">
+        <a [href]="github.url" class="text-decoration-none link-dark">
+          <span [innerHTML]="github.icon"></span> {{ github.text }}</a
+        >
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENIDO -->
+<article class="about">
+  <h2>Sobre mí</h2>
+  <p>
+    Actualmente estoy abierto a nuevas oportunidades relacionadas con el
+    desarrollo de software.
+  <br>Para saber un poco más sobre mí:</p>
+  <ul>
+    <li>Nacido en Cartagena (Murcia), viviendo en Sevilla desde mi niñez.</li>
+    <li>
+      Terminé el Bachillerato Tecnológico en el Instituto de Educación
+      Secundaria San Pablo (Sevilla).
+    </li>
+    <li>
+      Después de realizar selectividad, estuve estudiando durante varios años en
+      la Universidad de Sevilla (Ingeniería Técnica en Informática de Sistemas),
+      pero debido a diversas causas, decidí aplazar la ingeniería para hacer el
+      Grado Superior de 'Desarrollo de Aplicaciones Informáticas' en el
+      Instituto Velázquez (Sevilla).
+    </li>
+    <li>
+      Una vez terminado el Grado Superior, consideré continuar con la
+      ingeniería, pero por la entrada en vigor del plan Bolonia, y el
+      consecuente cambio en el plan de estudios, así como por la necesidad de
+      recursos económicos, decidí buscar trabajo. Fue así como comencé a
+      trabajar en Hispatel Telecomunicaciones, quienes colaboraban directamente
+      con Abentel (actual Ezentis) y con su matriz Movistar/Telefónica. Con
+      ellos estuve desarrollando la labor de 'Técnico de Mantenimiento e
+      Instalaciones' con la tecnología FTTH de Movistar en la provincia de
+      Sevilla.
+    </li>
+    <li>
+      Después de casi 3 años en Hispatel, su contrata superior Abentel
+      (posteriormente Ericsson/Ezentis) contactó conmigo para proseguir
+      realizando la misma labor directamente con ellos por un tiempo aproximado
+      de 2 años y medio.
+    </li>
+    <li>
+      Durante todo ese tiempo no dejé de estudiar, y pensé en diversas ocasiones
+      volver al campo del desarrollo de software, ya que siempre ha sido el
+      sector que más me atrae. Después de un accidente de tráfico, en el que
+      otro coche se saltó un ceda al paso, estuve más de un año sin poder
+      desplazarme. Entonces, y seguido de la pandemia del Covid-19, aproveché
+      dicho tiempo para estudiar el mercado de las cryptomonedas de forma
+      autónoma y realizar diversos cursos de programación para poder preparar
+      mis propios proyectos.
+    </li>
+    <li>
+      Desde el mes de septiembre de 2021 decidí dar un paso más y entrar en el
+      mundo crypto a modo de aprendizaje, con la intención de, en un futuro no
+      muy lejano, publicar mis propios proyectos. Desde entonces no he parado de
+      realizar cursos de programación orientados en particular a los NFT
+      (Non-Fungible Tokens).
+    </li>
+    <li>
+      En estos momentos sigo desarrollando aplicaciones utilizando las
+      tecnologías necesarias para dicho objetivo, entre las que se encuentran
+      Git/Github, Javascript, React/Jsx, Solidity, DApps con Ganache/Truffle,
+      Unity/C#, entre otras.
+    </li>
+  </ul>
+</article>

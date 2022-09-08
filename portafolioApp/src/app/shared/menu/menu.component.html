@@ -1,14 +1,11 @@
-<ul>
-  <span *ngFor="let item of menuItems; let i = index">
-    <li
-      [routerLink]="item.route"
-      routerLinkActive="router-link-active"
-      role="button"
-    >
-      <a href="">{{ item.text }}</a>
-    </li>
-    <!-- <li *ngIf="isMidMenu(i + 1)" role="button">
-      <a href="">Logo</a>
-    </li> -->
-  </span>
+<ul class="list-group list-group-horizontal d-flex justify-content-center">
+  <li
+    *ngFor="let item of menuItems; let i = index"
+    [routerLink]="item.route"
+    [routerLinkActive]="'actived'"
+    [routerLinkActiveOptions]="{ exact: true }"
+    [ngClass]="{ logo: i === 2, pointer: i !== 2 }"
+  >
+    <span class="d-flex align-self-center">{{ item.text }}</span>
+  </li>
 </ul>

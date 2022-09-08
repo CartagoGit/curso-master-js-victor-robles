@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  mongoUrl:
+    'mongodb+srv://CartagoMongo:mongo2Sv@cluster0.ww73cd0.mongodb.net/portafoliosApp',
 };
 
 /*
