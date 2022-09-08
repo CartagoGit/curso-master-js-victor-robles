@@ -23,10 +23,16 @@ export class MenuComponent implements OnInit {
     {
       text: 'Contacto',
       route: '/contacto',
-    }
+    },
   ];
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  isMidMenu(index: number): boolean {
+    const middle = Math.floor(this.menuItems.length / 2);
+
+    return middle === index;
+  }
 }

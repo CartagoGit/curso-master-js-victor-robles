@@ -32,7 +32,7 @@ Curso donde se aprenderá nociones de:
 
 ### Notas
 
-Este curso quedo parado por mi parte hace años por falta de conocimientos en css, y decidí hacer otros cursos de Bootstrap y Css para poder realizar la maquetación sin perder mucho tiempo.
+Este curso quedó parado por mi parte hace años por falta de conocimientos en css, y decidí hacer otros cursos de Bootstrap y Css para poder realizar la maquetación sin perder mucho tiempo.
 
 ### Razón para continuar y terminar el curso
 
