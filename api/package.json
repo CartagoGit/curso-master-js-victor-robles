@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "mongo": "Invoke-Expression & \"C:/Program Files/MongoDb/Server/4.2/bin/mongod.exe\" --dbpath \"V:/MongoDB/cursos/data\"",
-    "start": "nodemon src/index.js",
-    "start2": "nodemon index.js"
+    "start": "nodemon src/index.js"
   },
   "author": "Mario Cabrero Volarich",
   "license": "MIT",

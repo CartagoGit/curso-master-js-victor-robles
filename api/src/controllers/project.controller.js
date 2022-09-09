@@ -1,7 +1,7 @@
 "user strict";
 
-var Project = require("../models/project.model");
-var controller = {
+let Project = require("../models/project.model");
+let controller = {
 	home: function (req, res) {
 		return res.status(200).send({
 			message: "Soy la home",
@@ -15,17 +15,20 @@ var controller = {
 	},
 
 	saveProject: function (req, res) {
-		var project = new Project();
-		var params = req.body;
+		let project = new Project();
+		let params = req.body;
+		if (!params || !params.name) {
+			return res.status(500).send({
+				message: "Faltan parametros del project como para poder guardarlo",
+			});
+		}
 		project.name = params.name;
 		project.description = params.description;
 		project.category = params.category;
 		project.year = params.year;
-		console.log(params);
 		project.langs = Array.isArray(params.langs)
 			? params.langs
 			: params.langs.split(",");
-		console.log(project.langs);
 		project.file = params.file;
 
 		//guardar el projecto en la BD:
@@ -40,7 +43,7 @@ var controller = {
 		});
 	},
 	getProject: function (req, res) {
-		var projectId = req.params.id;
+		let projectId = req.params.id;
 		if (projectId == null)
 			return res
 				.status(404)
@@ -77,8 +80,8 @@ var controller = {
 	},
 
 	updateProject: function (req, res) {
-		var projectId = req.params.id;
-		var update = req.body;
+		let projectId = req.params.id;
+		let update = req.body;
 		if (projectId == null)
 			return res.status(404).send({
 				message: "No se pudo actualizar: No existe ningun project con esa Id",
@@ -102,7 +105,7 @@ var controller = {
 		);
 	},
 	deleteProject: function (req, res) {
-		var projectId = req.params.id;
+		let projectId = req.params.id;
 		if (projectId == null)
 			return res.status(404).send({
 				message: "No se pudo eliminar: No existe ningun project con esa Id",
@@ -120,10 +123,10 @@ var controller = {
 		});
 	},
 	uploadFile: function (req, res) {
-		var projectId = req.params.id;
-		var fileName = "No hay archivo seleccionado.";
+		let projectId = req.params.id;
+		let fileName = "No hay archivo seleccionado.";
 		if (req.file) {
-			var fileUploadData = req.file;
+			let fileUploadData = req.file;
 			Project.findOneAndUpdate(
 				projectId,
 				{ file: fileUploadData },
