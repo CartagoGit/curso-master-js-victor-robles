@@ -2,10 +2,12 @@
 
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const app = require("./app");
+const path = require('path')
 
+const app = require("./app");
+console.log(require("dotenv").config())
 // Activamos la lectura de variables de entorno
-const result = dotenv.config({path : '../api/.env'});
+const result = dotenv.config();
 if (result.error) {
 	throw result.error;
 }
