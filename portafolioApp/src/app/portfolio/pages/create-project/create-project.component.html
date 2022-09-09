@@ -1,1 +1,161 @@
-<p>create-project works!</p>
+<div class="container">
+  <h2>{{ title }}</h2>
+
+  <form
+    #projectForm="ngForm"
+    (ngSubmit)="onSubmit(projectForm)"
+    class="form-group"
+    autocomplete="off"
+  >
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <p>
+          <label for="name">Nombre</label>
+          <input
+            class="form-control input-text"
+            type="text"
+            name="name"
+            #name="ngModel"
+            [(ngModel)]="project.name"
+            required
+          />
+          <small class="alert-danger" *ngIf="name.touched && !name.valid">
+            El nombre del proyecto es necesario
+          </small>
+        </p>
+        <p>
+          <label for="description">Descripción</label>
+          <textarea
+            class="form-control input-text form-text-area"
+            type="text"
+            name="description"
+            #description="ngModel"
+            [(ngModel)]="project.description"
+            required
+          ></textarea>
+          <small
+            class="alert-danger"
+            *ngIf="description.touched && !description.valid"
+          >
+            La descripción del proyecto es necesaria
+          </small>
+        </p>
+        <p>
+          <label for="category">Categoría</label>
+          <input
+            class="form-control input-text"
+            type="text"
+            name="category"
+            #category="ngModel"
+            [(ngModel)]="project.category"
+            required
+          />
+          <small
+            class="alert-danger"
+            *ngIf="category.touched && !category.valid"
+          >
+            La categoría del proyecto es necesaria
+          </small>
+        </p>
+        <p>
+          <label for="year">Año de lanzamiento</label>
+          <input
+            class="form-control input-text"
+            type="number"
+            name="year"
+            #year="ngModel"
+            [(ngModel)]="project.year"
+            required
+          />
+          <small class="alert-danger" *ngIf="year.touched && !year.valid">
+            El año de comienzo del proyecto es necesario
+          </small>
+        </p>
+      </div>
+
+      <!-- COLUMNA DE LA DERECHA CON LA IMAGEN -->
+      <div
+        class="col-12 col-sm-6 justify-content-center align-items-center d-flex"
+      >
+        <img
+          [src]="
+            project.file
+              ? 'project.file'
+              : '../../../../assets/img/no_image.jpg'
+          "
+          alt=""
+        />
+      </div>
+    </div>
+
+    <!-- TODO Agregar y quitar lenguajes-->
+    <label for="langs">Lenguajes utilizados</label>
+    <div class="row">
+      <div class="col-12 col-md-2">
+        <input
+          class="form-control input-langs"
+          type="text"
+          name="langs"
+          #langControl
+          #langs="ngModel"
+          [(ngModel)]="inputLang"
+          />
+        <button
+          class="form-control button-add mt-0"
+          type="button"
+          (click)="addLang()"
+        >
+          Agregar lenguaje
+        </button>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <span *ngFor="let lang of project.langs; let i = index">
+              <div
+                class="input-group input-group-sm langs-group d-inline-flex me-2"
+              >
+                <input
+                  type="text"
+                  class="form-control"
+                  [placeholder]="lang"
+                  aria-describedby="button-addon2"
+                  readonly
+                />
+                <button
+                  (click)="removeLang(i)"
+                  class="btn btn-outline-secondary button-delete-lang"
+                  type="button"
+                >
+                  Borrar
+                </button>
+              </div></span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TODO Añadir imagen-->
+
+    <p>
+      <label for="image">Imagen del proyecto</label>
+      <input
+        class="form-control"
+        type="file"
+        name="image"
+        placeholder="Subir imagen"
+      />
+      <!-- <span class="alert-danger" *ngIf="name.touched && !name.valid">
+        El nombre del proyecto es necesario
+      </span> -->
+    </p>
+
+    <input
+      class="form-control"
+      type="submit"
+      value="Enviar"
+      [disabled]="projectForm.invalid"
+    />
+  </form>
+</div>

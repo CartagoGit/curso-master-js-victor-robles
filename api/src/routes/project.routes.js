@@ -9,7 +9,7 @@ var md_multer = require('../middlewares/multer');
 
 router.get('/'+model+'/home',Controller.home);
 router.post('/'+model+'/test', Controller.test);
-router.post('/'+model+'/save/',Controller.saveProject);
+router.post('/'+model+'/save_project/',Controller.saveProject);
 router.get('/'+model+'/get/:id?',Controller.getProject);
 router.get('/'+model+'s/get/',Controller.getProjects);
 router.put('/'+model+'/update/:id?', Controller.updateProject);

@@ -1,17 +1,28 @@
-'use strict'
+"use strict";
 
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var ProjectSchema = Schema({
-    name: String,
-    description: String,
-    category: String,
-    year: Number,
-    langs: String,
-    file: {}
+	name: { type: String, required: true },
+	description: String,
+	category: String,
+	year: Number,
+	langs: [String],
+	file: [
+		{
+			fieldname: String,
+			originalname: String,
+			encoding: String,
+			mimetype: String,
+			destination: String,
+			filename: String,
+			path: String,
+			size: Number,
+		},
+	],
 });
 
-// Lo que hace mongoose es poner el nombre en minusculas y le añade una "s" al añadirlo en la base de datos 
+// Lo que hace mongoose es poner el nombre en minusculas y le añade una "s" al añadirlo en la base de datos
 // en nuestro caso: "Project" pasaria a ser "projects"
-module.exports = mongoose.model('Project', ProjectSchema);
+module.exports = mongoose.model("Project", ProjectSchema);

@@ -145,11 +145,11 @@ footer {
   text-align: left;
 }
 
-#title .photo{
+#title .photo {
   border-radius: 500px;
   width: 50%;
 }
-#title p{
+#title p {
   padding: 0px;
   margin-bottom: 0px;
 }
@@ -203,7 +203,7 @@ article.about {
 }
 
 form {
-  width: 80%;
+  width: 100%;
 }
 
 form label {
@@ -213,16 +213,23 @@ form label {
   margin-bottom: 5px;
 }
 
-form input[type="text"],
+form .input-text,
 form input[type="number"],
 form input[type="email"],
 form textarea {
-  width: 40%;
+  width: 100%;
   padding: 5px;
+}
+
+form .form-text-area {
+  width: 100%;
+  min-height: 100px;
 }
 
 form button,
 form input[type="submit"],
+.button-add,
+.button-delete-lang,
 .button-edit,
 .button-delete {
   display: block;
@@ -233,6 +240,35 @@ form input[type="submit"],
   background: rgba(53, 103, 164, 1);
   border: 1px solid rgba(13, 67, 133, 1);
   cursor: pointer;
+}
+
+form input[type="submit"]:disabled {
+  background: rgba(0, 12, 26, 0.452);
+}
+form input[type="submit"]:disabled:hover {
+  background: rgba(0, 42, 88, 0.452);
+}
+
+form .input-langs {
+  width: 100%;
+}
+
+form .langs-group {
+  width: 30%;
+}
+
+form img{
+  border-radius: 40px;
+  border: solid 1px grey;
+  width: 100%;
+}
+.button-add {
+  width: 100%;
+  padding: 5px;
+}
+
+.button-delete-lang {
+  margin-top: 0px;
 }
 
 .button-edit,

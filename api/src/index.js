@@ -2,22 +2,14 @@
 
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const path = require('path')
-
 const app = require("./app");
-console.log(require("dotenv").config())
+
 // Activamos la lectura de variables de entorno
 const result = dotenv.config();
-if (result.error) {
-	throw result.error;
-}
-console.log(result);
+if (result.error) throw result.error;
 const port = process.env.PORT;
 const mongoUrl = process.env.MONGO_URL;
-// const port = 3700;
-// const mongoUrl = 'mongodb+srv://CartagoMongo:mongo2Sv@cluster0.ww73cd0.mongodb.net/portafoliosApp';
-console.log(port);
-// console.log(mongoUrl);
+
 mongoose.Promise = global.Promise;
 // mongoose.connect('mongodb://localhost:27017/portafolio',
 mongoose
@@ -33,11 +25,9 @@ mongoose
 		//Creacion del servidor
 		app.listen(port, () => {
 			console.log(
-				"Base de Datos corriendo correctamente en la url: " +
-					mongoUrl +
-					":" +
-					port
+				"Base de Datos corriendo correctamente en la url: " + mongoUrl
 			);
+			console.log("Node corriendo en localhost:" + port);
 			console.log(
 				"-----------------------------------------------------------"
 			);
