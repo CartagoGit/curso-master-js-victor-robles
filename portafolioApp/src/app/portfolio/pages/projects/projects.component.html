@@ -1,1 +1,45 @@
-<p>projects works!</p>
+<div class="container">
+  <h2>Proyectos</h2>
+  <ul class="list-group">
+    <li *ngFor="let project of projects" class="list-group-item">
+      <div class="row">
+        <div class="col">
+          <h3>
+            Proyecto: {{ project.name
+            }}<small class="badge bg-primary float-end fs-6 fw-light"
+              >Id: {{ project._id }}</small
+            >
+          </h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <h4 class="mb-1">Descripción del proyecto:</h4>
+          {{ project.description }}
+        </div>
+        <div class="col-4">
+          <h5>
+            Lenguajes:
+            <span
+              *ngFor="let lang of project.langs"
+              class="badge bg-secondary ms-1 fw-light"
+              >{{ lang }}</span
+            >
+          </h5>
+          <p>Categoria: {{ project.category }}</p>
+        </div>
+
+        <div class="col-4">
+          <div class="w-100 h-100 d-flex justify-content-end">
+            <img
+              [src]="getImageFromApi(project)"
+              alt="imagen del proyecto"
+              class="rounded img-fluid"
+              style="object-fit: contain; max-height: 150px"
+            />
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

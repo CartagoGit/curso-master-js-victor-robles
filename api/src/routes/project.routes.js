@@ -17,8 +17,10 @@ router.delete("/" + model + "/delete/:id?", Controller.deleteProject);
 // router.post('/'+model+'/:id/file/upload', md_multer.multerUploadFile(model).single('file'), Controller.uploadFile);
 router.post(
 	"/" + model + "/:id/file/upload",
-	() => md_multer.multerUploadFile(model).single("file"),
+	// () => md_multer.multerUploadFile(model).single("file"),
+	 md_multer.multerUploadFile(model).single("file"),
 	Controller.uploadFile
 );
+router.get('/'+model+'/get-image/:image', Controller.getImageFile)
 
 module.exports = router;

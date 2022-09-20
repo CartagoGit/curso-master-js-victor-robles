@@ -13,8 +13,11 @@ const multerUploadFile = (tipoRoute, onlyOne = true) => {
 	const year = d.getFullYear();
 	const date = day + "-" + month + "-" + year;
 	fs.mkdir(routeStorage, { recursive: true })
-		.then(() => {
-			console.log("La carpeta '" + routeStorage + "' se creo correctamente");
+		.then((res) => {
+			console.log(res);
+			console.log(
+				"La carpeta '" + routeStorage + "' ya existia o se creo correctamente"
+			);
 		})
 		.catch((err) => {
 			console.log("Hubo un error al crear la carpeta: " + err);
@@ -50,7 +53,7 @@ const multerUploadFile = (tipoRoute, onlyOne = true) => {
 				})
 				.then(() => {
 					console.log(
-						"Archivos anteriores del mismo tipo, eliminados correctamente"
+						"Archivos anteriores del mismo tipo de ese project, eliminados"
 					);
 					callback(null, true);
 				})

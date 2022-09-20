@@ -1,6 +1,9 @@
 "user strict";
 
-let Project = require("../models/project.model");
+const fs = require("fs");
+const path = require("path");
+const Project = require("../models/project.model");
+
 let controller = {
 	home: function (req, res) {
 		return res.status(200).send({
@@ -80,6 +83,7 @@ let controller = {
 	},
 
 	updateProject: function (req, res) {
+		console.log(entro);
 		let projectId = req.params.id;
 		let update = req.body;
 		if (projectId == null)
@@ -127,8 +131,9 @@ let controller = {
 		let fileName = "No hay archivo seleccionado.";
 		if (req.file) {
 			let fileUploadData = req.file;
+			console.log(projectId);
 			Project.findOneAndUpdate(
-				projectId,
+				{ _id: projectId },
 				{ file: fileUploadData },
 				{ new: true },
 				(err, projectUpdated) => {
@@ -137,15 +142,23 @@ let controller = {
 							.status(500)
 							.send({ message: "El archivo no se ha subido:", err });
 					if (!projectUpdated)
-						return res
-							.status(404)
-							.send({ message: "El archivo o el project no existen" });
+						return res.status(404).send({ message: "El project no existe" });
 					return res.status(200).send(projectUpdated);
 				}
 			);
 		} else {
 			return res.status(404).send({ message: fileName });
 		}
+	},
+
+	getImageFile: (req, res) => {
+		let file = req.params.image;
+		let path_file = "./uploads/projects/" + file;
+		// COMPROBAR SI EL ARCHIVO EXISTE
+		fs.stat(path_file, (err, stats) => {
+			if (stats) res.sendFile(path.resolve(path_file));
+			else res.status(200).send({ message: "No existe la imagen" });
+		});
 	},
 };
 
