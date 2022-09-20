@@ -21,7 +21,6 @@ export class ProjectsComponent implements OnInit {
   getProjects() {
     this._ps.getProjects().subscribe({
       next: (res) => {
-        console.log(res);
         if (res) this.projects = res;
       },
       error: (err) => {
@@ -29,7 +28,6 @@ export class ProjectsComponent implements OnInit {
       },
     });
   }
-
   getImageFromApi(project: ProjectFromApi) {
     if (project.file[0])
       return this.url + '/project/get-image/' + project.file[0].filename;

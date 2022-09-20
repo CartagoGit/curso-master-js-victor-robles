@@ -1,12 +1,18 @@
 <div class="container">
   <h2>Proyectos</h2>
-  <ul class="list-group">
-    <li *ngFor="let project of projects" class="list-group-item">
+  <ul class="list-group" style="z-index: 0">
+    <li *ngFor="let project of projects; let i = index" class="list-group-item mb-4">
       <div class="row">
         <div class="col">
           <h3>
-            Proyecto: {{ project.name
-            }}<small class="badge bg-primary float-end fs-6 fw-light"
+            Proyecto: {{ project.name }}
+            <span
+              class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-dark"
+            >
+              {{i+1}}
+            </span>
+
+            <small class="badge bg-primary float-end fs-6 fw-light"
               >Id: {{ project._id }}</small
             >
           </h3>
@@ -17,7 +23,7 @@
           <h4 class="mb-1">Descripción del proyecto:</h4>
           {{ project.description }}
         </div>
-        <div class="col-4">
+        <div class="col-4"><p>Categoria: {{ project.category }}</p>
           <h5>
             Lenguajes:
             <span
@@ -26,17 +32,28 @@
               >{{ lang }}</span
             >
           </h5>
-          <p>Categoria: {{ project.category }}</p>
+
         </div>
 
         <div class="col-4">
-          <div class="w-100 h-100 d-flex justify-content-end">
-            <img
-              [src]="getImageFromApi(project)"
-              alt="imagen del proyecto"
-              class="rounded img-fluid"
-              style="object-fit: contain; max-height: 150px"
-            />
+          <div class="row h-100">
+            <div class="w-100 h-auto d-flex justify-content-end col-12">
+              <img
+                [src]="getImageFromApi(project)"
+                alt="{{'imagen del proyecto '+project._id}}"
+                class="rounded img-fluid border"
+                style="object-fit: contain; max-height: 150px"
+              />
+            </div>
+
+            <div
+              [routerLink]="['/detalles-proyecto/' + project._id]"
+              class="col-12 d-flex justify-content-end align-self-end mt-2"
+            >
+              <span type="button" class="float-right btn btn-outline-secondary"
+                >Más detalles del proyecto...</span
+              >
+            </div>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CreateProjectComponent } from './pages/create-project/create-project.component';
+import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 
 const routes: Routes = [
@@ -24,6 +25,10 @@ const routes: Routes = [
       {
         path: 'contacto',
         component: ContactComponent,
+      },
+      {
+        path: 'detalles-proyecto/:id',
+        component: ProjectDetailsComponent,
       },
       {
         path: '**',

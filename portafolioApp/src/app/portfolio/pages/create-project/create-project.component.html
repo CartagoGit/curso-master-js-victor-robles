@@ -118,7 +118,6 @@
                   type="text"
                   class="form-control"
                   [placeholder]="lang"
-                  aria-describedby="button-addon2"
                   readonly
                 />
                 <button
@@ -162,5 +161,13 @@
       value="Enviar"
       [disabled]="projectForm.invalid"
     />
+    <button *ngIf="areThereLastProject"
+      class="form-control mt-3 btn btn-success"
+      type="button"
+      [routerLink]="['/detalles-proyecto/'+this.lastProject._id]"
+
+    >
+      Acceder a los detalles del último proyecto creado
+    </button>
   </form>
 </div>

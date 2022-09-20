@@ -32,9 +32,7 @@ export class ProjectService {
 
     // let params = project; <--- TAMBIEN FUNCIONA, PARA QUE RECONOZCA EL PARSEO NECESITA QUE EL HEADER ACEPTE (y comprobarlo) el application/json
     const headers: HttpHeaders = this._getHeaders();
-    // console.log(headers);
-
-    return this._http.post<Project>(
+     return this._http.post<Project>(
       this._urlApi + '/project/save_project',
       params,
       {
@@ -49,4 +47,13 @@ export class ProjectService {
       headers,
     });
   }
+
+  getProject(id: string): Observable<ProjectFromApi> {
+    const headers: HttpHeaders = this._getHeaders();
+    return this._http.get<ProjectFromApi>(this._urlApi + '/project/get/' + id, {
+      headers,
+    });
+  }
+
+  
 }

@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 
 import Swal from 'sweetalert2';
 
-import { Project } from '../../interfaces/proyects.interface';
+import { Project, ProjectFromApi } from '../../interfaces/proyects.interface';
 import { ProjectService } from '../../services/project.service';
 import { UploadService } from '../../services/upload.service';
 
@@ -18,9 +18,11 @@ export class CreateProjectComponent implements OnInit {
   public title: string = 'Crear Proyecto';
   public inputLang: string = '';
   public project!: Project;
+  public lastProject!: ProjectFromApi | Project;
   public status!: string;
   public imageSource: string | ArrayBuffer | null | undefined;
   public isImage: boolean = true;
+  public areThereLastProject: boolean = false;
   // public filesToUpload!: File[];
   constructor(
     private _projectService: ProjectService,
@@ -39,6 +41,7 @@ export class CreateProjectComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(form: NgForm): void {
+    this.areThereLastProject = false;
     // GUARDAR LOS DATOS
     this._projectService.saveProject(this.project).subscribe({
       next: (resp: Project) => {
@@ -54,13 +57,14 @@ export class CreateProjectComponent implements OnInit {
             this.project.langs = [];
             this.project.file = undefined;
             this.inputFile.nativeElement.value = '';
+            this.areThereLastProject = true;
+            this.lastProject = resp;
             return;
           }
           this._uploadService
             .makeFilesRequest(resp._id, [], this.project.file!, 'file')
             .then(
               (result: Response) => {
-                console.log(result);
                 Swal.fire(
                   'Exito',
                   'El proyecto se ha guardado correctamente en la base de datos',
@@ -70,6 +74,8 @@ export class CreateProjectComponent implements OnInit {
                 this.project.file = undefined;
                 this.imageSource = null;
                 this.inputFile.nativeElement.value = '';
+                this.areThereLastProject = true;
+                this.lastProject = resp;
               },
               (error) => {
                 Swal.fire(
@@ -78,6 +84,7 @@ export class CreateProjectComponent implements OnInit {
                   'error'
                 );
                 console.log(error);
+
                 throw new Error();
               }
             );
