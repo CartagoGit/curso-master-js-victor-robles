@@ -33,4 +33,6 @@ export class ProjectsComponent implements OnInit {
       return this.url + '/project/get-image/' + project.file[0].filename;
     else return '../../../../assets/img/no_image.jpg';
   }
+
+  
 }

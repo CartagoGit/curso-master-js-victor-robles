@@ -39,8 +39,20 @@
       </h5>
     </div>
     <div class="col-12 d-flex justify-content-end">
-      <button class='btn btn-outline-primary me-2 ' type="button">Editar</button>
-      <button class='btn btn-outline-danger' type="button">Borrar</button>
+      <button
+        class="btn btn-outline-primary me-2"
+        type="button"
+        [routerLink]="['/editar-proyecto/', project?._id]"
+      >
+        Editar
+      </button>
+      <button
+        class="btn btn-outline-danger"
+        type="button"
+        (click)="deleteProject()"
+      >
+        Borrar
+      </button>
     </div>
   </div>
 </div>

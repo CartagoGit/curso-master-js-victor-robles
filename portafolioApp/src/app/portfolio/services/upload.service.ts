@@ -29,7 +29,6 @@ export class UploadService {
       xhr.onreadystatechange = () => {
         if (xhr.readyState === 4) {
           if (xhr.status === 200) {
-            console.log(JSON.parse(xhr.response));
             resolve(JSON.parse(xhr.response));
           } else {
             reject(xhr.response);

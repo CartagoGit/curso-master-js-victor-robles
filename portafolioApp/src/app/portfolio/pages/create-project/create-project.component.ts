@@ -23,6 +23,8 @@ export class CreateProjectComponent implements OnInit {
   public imageSource: string | ArrayBuffer | null | undefined;
   public isImage: boolean = true;
   public areThereLastProject: boolean = false;
+  public imageTitleInput: string = 'Imagen del proyecto';
+  public textInputSubmit: string = 'Guardar';
   // public filesToUpload!: File[];
   constructor(
     private _projectService: ProjectService,
@@ -59,35 +61,9 @@ export class CreateProjectComponent implements OnInit {
             this.inputFile.nativeElement.value = '';
             this.areThereLastProject = true;
             this.lastProject = resp;
-            return;
+          } else {
+            this.uploadWithImage(resp, form);
           }
-          this._uploadService
-            .makeFilesRequest(resp._id, [], this.project.file!, 'file')
-            .then(
-              (result: Response) => {
-                Swal.fire(
-                  'Exito',
-                  'El proyecto se ha guardado correctamente en la base de datos',
-                  'success'
-                );
-                form.reset();
-                this.project.file = undefined;
-                this.imageSource = null;
-                this.inputFile.nativeElement.value = '';
-                this.areThereLastProject = true;
-                this.lastProject = resp;
-              },
-              (error) => {
-                Swal.fire(
-                  'Fallo',
-                  'La Imagen del proyecto no se guardo correctamente, pruebe cambiando el formato o con otra imagen',
-                  'error'
-                );
-                console.log(error);
-
-                throw new Error();
-              }
-            );
         } else
           Swal.fire('Hubo un problema al guardar el proyecto', '', 'error');
       },
@@ -137,5 +113,38 @@ export class CreateProjectComponent implements OnInit {
       fileName.indexOf('svg') > -1 ||
       fileName.indexOf('jpeg') > -1
     );
+  }
+
+  uploadWithImage(resp: Project | ProjectFromApi, form: NgForm): boolean {
+    let isError: boolean = false;
+    this._uploadService
+      .makeFilesRequest(resp._id!, [], this.project.file!, 'file')
+      .then(
+        (result: Response) => {
+          Swal.fire(
+            'Exito',
+            'El proyecto se ha guardado correctamente en la base de datos',
+            'success'
+          );
+          form.reset();
+          this.project.file = undefined;
+          this.imageSource = null;
+          this.inputFile.nativeElement.value = '';
+          this.areThereLastProject = true;
+          this.lastProject = resp;
+          isError = false;
+        },
+        (error) => {
+          Swal.fire(
+            'Fallo',
+            'La Imagen del proyecto no se guardo correctamente, pruebe cambiando el formato o con otra imagen',
+            'error'
+          );
+          console.log(error);
+          isError= true;
+          // throw new Error();
+        }
+      );
+      return isError;
   }
 }

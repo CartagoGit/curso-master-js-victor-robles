@@ -83,12 +83,13 @@ let controller = {
 	},
 
 	updateProject: function (req, res) {
-		console.log(entro);
+		console.log("entro");
 		let projectId = req.params.id;
 		let update = req.body;
 		if (projectId == null)
 			return res.status(404).send({
-				message: "No se pudo actualizar: No existe ningun project con esa Id",
+				message:
+					"No se pudo actualizar: no se recibio una id del proyecto que se desea actualizar",
 			});
 		//new:true para que me pase el objeto nuevo y no el anterior de la actualziacion
 		Project.findByIdAndUpdate(

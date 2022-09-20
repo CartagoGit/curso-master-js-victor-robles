@@ -8,6 +8,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CreateProjectComponent } from './pages/create-project/create-project.component';
 import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
+import { EditProjectComponent } from './pages/edit-project/edit-project.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { ProjectDetailsComponent } from './pages/project-details/project-details
     ContactComponent,
     CreateProjectComponent,
     ProjectDetailsComponent,
+    EditProjectComponent,
   ],
   imports: [CommonModule, FormsModule, PortfolioRoutingModule],
 })

@@ -137,12 +137,11 @@
     <!-- Añadir imagen-->
 
     <p>
-      <label for="image"
-        >Imagen del proyecto<span
-          class="ms-2 badge bg-danger float-end"
-          [hidden]="isImage"
-          >Extension de imagen incorrecta</span
-        ></label
+      <label for="image">
+        {{imageTitleInput}}
+        <span class="ms-2 badge bg-danger float-end" [hidden]="isImage">
+          Extension de imagen incorrecta
+        </span></label
       >
       <input
         class="form-control"
@@ -158,14 +157,14 @@
     <input
       class="form-control"
       type="submit"
-      value="Enviar"
+      value="{{textInputSubmit}}"
       [disabled]="projectForm.invalid"
     />
-    <button *ngIf="areThereLastProject"
+    <button
+      *ngIf="areThereLastProject"
       class="form-control mt-3 btn btn-success"
       type="button"
-      [routerLink]="['/detalles-proyecto/'+this.lastProject._id]"
-
+      [routerLink]="['/detalles-proyecto/' + this.lastProject._id]"
     >
       Acceder a los detalles del último proyecto creado
     </button>
