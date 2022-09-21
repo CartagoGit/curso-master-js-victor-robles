@@ -83,7 +83,6 @@ let controller = {
 	},
 
 	updateProject: function (req, res) {
-		console.log("entro");
 		let projectId = req.params.id;
 		let update = req.body;
 		if (projectId == null)
@@ -132,7 +131,6 @@ let controller = {
 		let fileName = "No hay archivo seleccionado.";
 		if (req.file) {
 			let fileUploadData = req.file;
-			console.log(projectId);
 			Project.findOneAndUpdate(
 				{ _id: projectId },
 				{ file: fileUploadData },

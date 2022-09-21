@@ -20,8 +20,14 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/assets/css/styles.css"],
-            "scripts": []
+            "styles": [
+              "src/assets/css/styles.css",
+              "src/assets/bxslider/jquery.bxslider.min.css"
+            ],
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "src/assets/bxslider/jquery.bxslider.min.js"
+            ]
           },
           "configurations": {
             "production": {
