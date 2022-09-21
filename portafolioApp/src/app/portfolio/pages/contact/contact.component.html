@@ -1,3 +1,41 @@
-<p>Pero mario lo peta</p>
-
-<button id=""></button>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-7">
+      <div class="galeria">
+        <a
+          *ngFor="let image of imagesSlider; let i = index"
+          [href]="image.link"
+          target="_blank"
+        >
+          <img
+            [src]="image.src"
+            [title]="image.description"
+            class="img-fluid"
+          />
+        </a>
+      </div>
+    </div>
+    <div class="col-12 col-lg-5 d-flex align-items-start flex-column">
+      <h3>¿Encajo en el perfil laboral que buscas?</h3>
+      <p>
+        No dudes en contactar conmigo a traves de cualquiera de las siguientes
+        opciones
+      </p>
+      <p class="pointer mt-auto">
+        <a [href]="github.url" class="text-decoration-none link-dark">
+          <span [innerHTML]="github.icon"></span> {{ github.text }}</a
+        >
+      </p>
+      <p class="pointer">
+        <a [href]="github.url" class="text-decoration-none link-dark">
+          <span [innerHTML]="linkedin.icon"></span> {{ linkedin.text }}</a
+        >
+      </p>
+      <p class="pointer mb-auto">
+        <a [href]="email.address" class="text-decoration-none link-dark">
+          <span [innerHTML]="email.icon"></span> {{ email.address }}</a
+        >
+      </p>
+    </div>
+  </div>
+</div>

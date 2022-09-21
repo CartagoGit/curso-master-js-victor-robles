@@ -19,6 +19,11 @@ export class AboutComponent implements OnInit {
     text: 'email',
     icon: '<i class="fa-regular fa-envelope"></i>',
   };
+  public linkedin: InfoObject = {
+    address: 'https://www.linkedin.com/in/mario-cabrero-volarich/',
+    text: 'LinkedIn',
+    icon: '<i class="fa-brands fa-linkedin"></i>',
+  };
   constructor() {}
 
   ngOnInit(): void {}

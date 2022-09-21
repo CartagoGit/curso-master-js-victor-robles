@@ -19,9 +19,14 @@
           <span [innerHTML]="email.icon"></span> {{ email.address }}</a
         >
       </p>
-      <p class="pointer mb-auto">
+      <p class="pointer">
         <a [href]="github.url" class="text-decoration-none link-dark">
           <span [innerHTML]="github.icon"></span> {{ github.text }}</a
+        >
+      </p>
+      <p class="pointer mb-auto">
+        <a [href]="github.url" class="text-decoration-none link-dark">
+          <span [innerHTML]="linkedin.icon"></span> {{ linkedin.text }}</a
         >
       </p>
     </div>
@@ -34,21 +39,24 @@
   <p>
     Actualmente estoy abierto a nuevas oportunidades relacionadas con el
     desarrollo de software.
-  <br>Para saber un poco más sobre mí:</p>
-  <ul>
-    <li>Nacido en Cartagena (Murcia), viviendo en Sevilla desde mi niñez.</li>
-    <li>
+    <br />Para saber un poco más sobre mí:
+  </p>
+  <ul class="list-group">
+    <li class="list-group-item mb-3 shadow-md h5 rounded">
+      Nacido en Cartagena (Murcia), viviendo en Sevilla desde mi niñez.
+    </li>
+    <li class="list-group-item mb-3 shadow-md h5 rounded">
       Terminé el Bachillerato Tecnológico en el Instituto de Educación
       Secundaria San Pablo (Sevilla).
     </li>
-    <li>
+    <li class="list-group-item mb-3 shadow-md h5 rounded">
       Después de realizar selectividad, estuve estudiando durante varios años en
       la Universidad de Sevilla (Ingeniería Técnica en Informática de Sistemas),
       pero debido a diversas causas, decidí aplazar la ingeniería para hacer el
       Grado Superior de 'Desarrollo de Aplicaciones Informáticas' en el
       Instituto Velázquez (Sevilla).
     </li>
-    <li>
+    <li class="list-group-item mb-3 shadow-md h5 rounded">
       Una vez terminado el Grado Superior, consideré continuar con la
       ingeniería, pero por la entrada en vigor del plan Bolonia, y el
       consecuente cambio en el plan de estudios, así como por la necesidad de
@@ -59,13 +67,13 @@
       Instalaciones' con la tecnología FTTH de Movistar en la provincia de
       Sevilla.
     </li>
-    <li>
+    <li class="list-group-item mb-3 shadow-md h5 rounded">
       Después de casi 3 años en Hispatel, su contrata superior Abentel
       (posteriormente Ericsson/Ezentis) contactó conmigo para proseguir
       realizando la misma labor directamente con ellos por un tiempo aproximado
       de 2 años y medio.
     </li>
-    <li>
+    <li class="list-group-item mb-3 shadow-md h5 rounded">
       Durante todo ese tiempo no dejé de estudiar, y pensé en diversas ocasiones
       volver al campo del desarrollo de software, ya que siempre ha sido el
       sector que más me atrae. Después de un accidente de tráfico, en el que
@@ -75,14 +83,14 @@
       autónoma y realizar diversos cursos de programación para poder preparar
       mis propios proyectos.
     </li>
-    <li>
+    <li class="list-group-item mb-3 shadow-md h5 rounded">
       Desde el mes de septiembre de 2021 decidí dar un paso más y entrar en el
       mundo crypto a modo de aprendizaje, con la intención de, en un futuro no
       muy lejano, publicar mis propios proyectos. Desde entonces no he parado de
       realizar cursos de programación orientados en particular a los NFT
       (Non-Fungible Tokens).
     </li>
-    <li>
+    <li class="list-group-item mb-3 shadow-md h5 rounded">
       En estos momentos sigo desarrollando aplicaciones utilizando las
       tecnologías necesarias para dicho objetivo, entre las que se encuentran
       Git/Github, Javascript, React/Jsx, Solidity, DApps con Ganache/Truffle,
